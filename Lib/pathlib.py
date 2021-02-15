@@ -1560,6 +1560,12 @@ class Path(PurePath):
 
         return self
 
+ 
+class PathLiteral(): 
+    def __truediv__(self, other): 
+    return Path(other)
+
+_p = PathLiteral()   
 
 class PosixPath(Path, PurePosixPath):
     """Path subclass for non-Windows systems.
